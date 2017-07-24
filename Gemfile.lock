@@ -1,12 +1,3 @@
-GIT
-  remote: https://github.com/octoberstorm/eslint-rails
-  revision: 71a40292e764d94f16a4174ea92b07824cdc0d34
-  specs:
-    eslint-rails (1.2.1)
-      colorize
-      execjs
-      railties (>= 3.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -92,7 +83,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    colorize (0.8.1)
     concurrent-ruby (1.0.5)
     config (1.4.0)
       activesupport (>= 3.0)
@@ -472,7 +462,7 @@ GEM
       ref
     thor (0.19.4)
     thread_safe (0.3.6)
-    tilt (2.0.7)
+    tilt (2.0.8)
     trollop (2.1.2)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
@@ -514,7 +504,6 @@ DEPENDENCIES
   coffee-rails (= 4.2.2)
   config
   database_cleaner
-  eslint-rails!
   factory_girl_rails
   faker (= 1.7.3)
   figaro
