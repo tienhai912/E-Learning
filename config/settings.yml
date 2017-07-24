@@ -1,0 +1,24 @@
+user:
+  name_max: 50
+  password_min: 6
+  email_max: 255
+  default_gravatar: 80
+  gravatar: 50
+  small_gravatar: 30
+
+lesson:
+  name_max: 50
+
+word:
+  content_max: 250
+
+answer:
+  content_max: 250
+
+course:
+  name_max: 50
+  description: 250
+
+category:
+  name_max: 50
+  description: 250
