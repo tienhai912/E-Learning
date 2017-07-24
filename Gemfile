@@ -20,11 +20,6 @@ gem "jbuilder", ">=2.6.1"
 gem "figaro"
 gem "i18n-js"
 
-group :development, :test do
-  gem "sqlite3", "1.3.13"
-  gem "byebug", "9.0.6", platform: :mri
-end
-
 group :development do
   gem "web-console", "3.5.1"
   gem "listen", ">=3.0.8"
@@ -38,20 +33,34 @@ group :test do
   gem "guard", "2.14.1"
   gem "guard-minitest", "2.4.6"
   gem "rspec-activemodel-mocks"
+  gem "simplecov", require: false
+  gem "simplecov-rcov", require: false
+  gem "simplecov-json"
+  gem "shoulda-matchers"
+end
+
+group :development, :test do
+  gem "sqlite3", "1.3.13"
+  gem "byebug", "9.0.6", platform: :mri
+  gem "rspec"
+  gem "rspec-rails"
   gem "rspec-collection_matchers"
-  gem "shoulda-matchers", "~> 3.0"
-  gem "database_cleaner", "~> 1.5"
+  gem "factory_girl_rails"
+  gem "better_errors"
+  gem "guard-rspec", require: false
+  gem "database_cleaner"
+  gem "brakeman", require: false
+  gem "jshint"
+  gem "bundler-audit"
   gem "rubocop", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "scss_lint", require: false
   gem "scss_lint_reporter_checkstyle", require: false
+  gem "eslint-rails", git: "https://github.com/octoberstorm/eslint-rails", require: false
   gem "rails_best_practices"
-  gem "brakeman", require: false
-  gem "bundler-audit"
   gem "reek"
-  gem "simplecov", require: false
-  gem "rspec-rails", "~> 3.6"
-  gem "eslint-rails"
+  gem "railroady"
+  gem "autoprefixer-rails"
 end
 
 group :production do
