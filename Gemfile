@@ -19,6 +19,8 @@ gem "turbolinks", "5.0.1"
 gem "jbuilder", ">=2.6.1"
 gem "figaro"
 gem "i18n-js"
+gem "binding_of_caller"
+gem "font-awesome-rails"
 
 group :development do
   gem "web-console", "3.5.1"
