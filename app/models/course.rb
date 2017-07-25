@@ -8,4 +8,8 @@ class Course < ApplicationRecord
       length: {maximum: Settings.course.name_max}
   validates :description, presence: true,
       length: {maximum: Settings.course.description}
+
+  def lessons_in_course
+    Lesson.where "course_id = ?", id
+  end
 end

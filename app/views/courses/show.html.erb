@@ -1,0 +1,6 @@
+<% provide :title, "Course: #{@course.name}" %>
+<span class="course-name"><%= link_to @course.name, @course%></span>
+<ul class="lessons">
+  <%= render @lessons %>
+</ul>
+
