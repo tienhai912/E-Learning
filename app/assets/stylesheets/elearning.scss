@@ -1,0 +1,107 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome';
+
+$white: #fff;
+$orange: #ed6d12;
+$footer: #252525;
+$fa-facebook: #3b5998;
+$fa-twitter: #55acee;
+$fa-google: #dd4b39;
+$fa-youtube: #b00;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  padding-top: 60px;
+}
+
+.logo {
+  color: $white;
+  float: left;
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-right: 10px;
+  padding-top: 9px;
+  text-transform: uppercase;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+footer {
+  background-color: $footer;
+  margin-top: 30px;
+  padding-bottom: 40px;
+  padding-top: 20px;
+
+  .follow-me {
+    padding-left: 100px;
+
+    h4 {
+      color: $white;
+      font-size: 19px;
+    }
+  }
+
+  .copyright {
+    h4 {
+      color: $white;
+      font-size: 19px;
+    }
+
+    p {
+      color: $orange;
+      margin-top: 40px;
+    }
+  }
+}
+
+.footer-nav-social {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    display: inline-block;
+
+    .fa {
+      border-radius: 50%;
+      font-size: 17px;
+      margin: 5px 2px;
+      padding: 13px;
+      text-align: center;
+      text-decoration: none;
+      width: 41px;
+    }
+
+    .fa:hover {
+      opacity: .7;
+    }
+
+    .fa-facebook {
+      background: $fa-facebook;
+      color: $white;
+    }
+
+    .fa-twitter {
+      background: $fa-twitter;
+      color: $white;
+    }
+
+    .fa-google {
+      background: $fa-google;
+      color: $white;
+    }
+
+    .fa-youtube {
+      background: $fa-youtube;
+      color: $white;
+    }
+  }
+}
