@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  cant_finish_before_start: "Can't finish before start"
+  datetime_variable: "Must be datetime variable"
+  cant_follow_self: "Can't follow yourself"

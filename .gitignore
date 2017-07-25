@@ -52,9 +52,7 @@ config/environments/*.local.yml
 .framgia-ci-result.temp.yml
 /config/rails_best_practices.yml
 
-config/settings.local.yml
-config/settings/*.local.yml
-config/environments/*.local.yml
+config/settings/*.yml
 
 # Ignore application configuration
 /config/application.yml
