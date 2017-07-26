@@ -1,9 +1,8 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :validatable
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-
-  attr_reader :remember_token, :activation_token, :reset_token
-
-  has_secure_password
 
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: :follower_id, dependent: :destroy
