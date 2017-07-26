@@ -9,6 +9,8 @@ $fa-facebook: #3b5998;
 $fa-twitter: #55acee;
 $fa-google: #dd4b39;
 $fa-youtube: #b00;
+$red: #f00;
+$input-form: #bbb;
 
 html,
 body {
@@ -103,5 +105,34 @@ footer {
       background: $fa-youtube;
       color: $white;
     }
+  }
+}
+
+input {
+  border: 1px solid $input-form;
+  box-sizing: border-box;
+  height: auto;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.sign-up {
+  h1 {
+    text-align: center;
+  }
+}
+
+.error-explanation {
+  color: $red;
+
+  ul {
+    color: $red;
+    margin-bottom: 30px;
+  }
+}
+
+.field-with-errors {
+  .form-control {
+    color: $red;
   }
 }

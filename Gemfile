@@ -21,6 +21,7 @@ gem "figaro"
 gem "i18n-js"
 gem "binding_of_caller"
 gem "font-awesome-rails"
+gem "devise"
 
 group :development do
   gem "web-console", "3.5.1"
