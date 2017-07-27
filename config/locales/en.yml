@@ -38,6 +38,7 @@ en:
   e_learning: "E-LEARNING"
   home: "Home"
   help: "Help"
+  categories: "Categories"
   follow_us: "Follow us"
   sign_in: "Sign in"
   sign_up: "Sign up"
@@ -70,3 +71,5 @@ en:
   you_learn: "You've learned"
   image: "image"
   start_lesson: "Start lesson"
+  user: "User"
+  settings: "Settings"

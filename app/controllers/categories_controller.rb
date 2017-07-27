@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   attr_reader :category
-  
+
   def index
     @categories = Category.paginate page: params[:page]
   end
