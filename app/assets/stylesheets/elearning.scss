@@ -136,3 +136,14 @@ input {
     color: $red;
   }
 }
+
+.course-list {
+  .img-course {
+    height: 160px;
+    width: 100%;
+  }
+
+  .course-item {
+    margin-bottom: 50px;
+  }
+}

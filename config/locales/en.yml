@@ -67,3 +67,6 @@ en:
   characters_minimum: "characters minimum"
   no_receive_confirmation: "Didn't receive confirmation instructions?"
   no_receive_unlock: Didn't receive unlock instructions?"
+  you_learn: "You've learned"
+  image: "image"
+  start_lesson: "Start lesson"
