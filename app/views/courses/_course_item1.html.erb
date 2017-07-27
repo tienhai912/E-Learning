@@ -3,7 +3,7 @@
     <h3><%= link_to course.name, course %></h3>
     <p><%= t "you_learn" %></p>
     <p><%= course.description %></p>
-    <%= link_to t("start_lesson"), lessons_path, class: "btn btn-primary" %>
+    <%= render "courses/course_button", course: course %>
   </div>
   <div class="col-md-6 ">
     <%= image_tag "http://placekitten.com/g/400/400", alt: t("image"),
