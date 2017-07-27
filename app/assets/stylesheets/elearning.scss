@@ -11,6 +11,7 @@ $fa-google: #dd4b39;
 $fa-youtube: #b00;
 $red: #f00;
 $input-form: #bbb;
+$grey: #666560;
 
 html,
 body {
@@ -19,7 +20,22 @@ body {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 90px;
+}
+
+.dropdown {
+  width: 100px;
+}
+
+.scroll-menu {
+  height: auto;
+  max-height: 500px;
+  overflow-x: hidden;
+}
+
+.dropdown:hover .dropdown-menu {
+  background-color: $white;
+  display: block;
 }
 
 .logo {
@@ -39,8 +55,8 @@ body {
 
 footer {
   background-color: $footer;
-  margin-top: 30px;
-  padding-bottom: 40px;
+  margin-top: 20px;
+  padding-bottom: 20px;
   padding-top: 20px;
 
   .follow-me {
@@ -55,12 +71,30 @@ footer {
   .copyright {
     h4 {
       color: $white;
-      font-size: 19px;
+      font-size: 30px;
     }
 
     p {
       color: $orange;
-      margin-top: 40px;
+      font-size: 20px;
+    }
+  }
+
+  .help {
+    padding: 50px;
+
+    a {
+      color: $white;
+      font-size: 20px;
+    }
+  }
+
+  .about {
+    padding: 50px;
+
+    a {
+      color: $white;
+      font-size: 20px;
     }
   }
 }

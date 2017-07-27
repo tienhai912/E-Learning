@@ -4,10 +4,22 @@
     <div>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t("home"), root_path %></li>
-        <li><%= link_to t("help"), pages_path(page: "help") %></li>
-        <li><%= link_to t("about"), pages_path(page: "about") %></li>
+        <li class="dropdown">
+          <%= link_to t("categories"), categories_path %>
+          <ul class="dropdown-menu dropdown-menu-left scroll-menu" roll="menu">
+            <% all_categories.each do |category| %>
+              <li><%= link_to category.name, category %></li>
+            <% end %>
+          </ul>
+        </li>
         <% if user_signed_in? %>
-          <li><%= link_to t("log_out"), destroy_user_session_path, method: :delete %></li>
+          <li class="dropdown">
+            <%= link_to current_user.name, "#" %>
+            <ul class="dropdown-menu dropdown-menu-left scroll-menu" roll="menu">
+              <li><%= link_to t("settings"), edit_user_registration_path %></li>
+              <li><%= link_to t("log_out"), destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>     
         <% else %>
           <li><%= link_to t("sign_in"), new_user_session_path %></li>
           <li><%= link_to t("sign_up"), new_user_registration_path %></li>
