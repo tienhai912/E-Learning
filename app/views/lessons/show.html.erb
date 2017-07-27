@@ -7,4 +7,5 @@
 <ul class="words">
   <%= render @words %>
 </ul>
-<%= button_to t("start_lesson"), "" %>
+<%= link_to t("start_lesson"), tests_path(lesson_id: @lesson.id),
+  method: :post, class: "btn btn-primary" %>

@@ -13,6 +13,7 @@ $red: #f00;
 $input-form: #bbb;
 $grey: #666560;
 $blue: #00f;
+$black: #000;
 
 html,
 body {
@@ -258,4 +259,24 @@ input {
   padding-top: 15px;
   text-align: center;
   width: 300px;
+}
+
+.name-test {
+  color: $black;
+  font-size: 200%;
+  text-align: center;
+
+  span {
+    color: $red;
+  }
+}
+
+.result-test {
+  ul {
+    list-style: none;
+  }
+}
+
+.speak-result {
+  width: 70px;
 }
