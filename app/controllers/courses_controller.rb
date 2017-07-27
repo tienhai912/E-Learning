@@ -1,4 +1,6 @@
 class CoursesController < ApplicationController
+  before_action :logged_in_user, only: :show
+
   attr_reader :course
 
   def show

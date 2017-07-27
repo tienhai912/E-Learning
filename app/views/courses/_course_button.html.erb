@@ -1,0 +1,9 @@
+<% if !user_signed_in? %>
+  <%= link_to t("start"), course, class: "btn btn-primary" %>
+<% elsif !course.has_enrolled? current_user %>
+  <%= render "courses/start_course", course: course %>
+<% elsif course.has_finished? current_user %>
+  <%= link_to t("review"), course, class: "btn btn-primary" %>
+<% else %>
+  <%= link_to t("continue"), course, class: "btn btn-primary" %>
+<% end %>

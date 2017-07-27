@@ -1,0 +1,7 @@
+<% provide :title, @lesson.name %>
+
+<span class="lesson-name"><%= link_to @lesson.name, @lesson%></span>
+<ul class="words">
+  <%= render @words %>
+</ul>
+<%= button_to "Start lesson", ""%>
