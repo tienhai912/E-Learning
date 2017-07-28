@@ -14,7 +14,7 @@
         </li>
         <% if user_signed_in? %>
           <li class="dropdown">
-            <%= link_to current_user.name, "#" %>
+            <%= link_to current_user.name, current_user %>
             <ul class="dropdown-menu dropdown-menu-left scroll-menu" roll="menu">
               <li><%= link_to t("settings"), edit_user_registration_path %></li>
               <li><%= link_to t("log_out"), destroy_user_session_path, method: :delete %></li>

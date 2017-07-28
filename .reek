@@ -1,6 +1,15 @@
 IrresponsibleModule:
   enabled: false
 
+TooManyStatements:
+  exclude:
+    - "RelationshipsController#create"
+    - "RelationshipsController#destroy"
+
+FeatureEnvy:
+  exclude:
+    - "UsersHelper#gravatar_for"
+
 exclude_paths:
   - 'vendor'
   - 'db/migrate'

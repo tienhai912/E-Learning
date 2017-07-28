@@ -3,6 +3,7 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find_by id: params[:id]
-    @words = lesson.words.paginate page: params[:page], per_page: 50
+    @words = lesson.words.paginate page: params[:page],
+      per_page: Settings.lesson.per_page
   end
 end
