@@ -3,5 +3,12 @@ Rails.application.routes.draw do
   get "pages/*page", to: "pages#show", as: :pages
   root "pages#show", page: "home"
 
-  resources :categories, :courses, :lessons
+  resources :courses, only: :show do
+    resources :lessons, only: :show
+  end
+
+  resources :categories
+  resources :users do
+    resources :enrolls, only: %i(new create)
+  end
 end

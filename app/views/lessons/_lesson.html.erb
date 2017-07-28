@@ -1,3 +1,5 @@
 <li>
-  <span class="lesson-name"><%= link_to lesson.name, lesson%></span>
+  <span class="lesson-name">
+    <%= link_to lesson.name, course_lesson_path(lesson.course_id, lesson.id) %>
+  </span>
 </li>

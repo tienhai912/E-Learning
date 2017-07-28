@@ -1,0 +1,8 @@
+<% provide :title, @lesson.name %>
+
+<span class="lesson-name"><%= link_to @lesson.name,
+  course_lesson_path(@lesson.course_id, @lesson.id) %></span>
+<ul class="words">
+  <%= render @words %>
+</ul>
+<%= button_to t("start_lesson"), "" %>

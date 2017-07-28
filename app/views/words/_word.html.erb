@@ -1,0 +1,16 @@
+<li>
+  <div class="row">
+    <div class="col-md-6">
+      <span class="word-content">
+        <%= word.content %>
+      </span>
+    </div>
+    <div class="col-md-6">
+      <span class="answer-content">
+        <% word.answers.correct.each do |right_answer| %>
+          <p><%= right_answer.content %></p>
+        <% end %>
+      </span>
+    </div>
+  </div>
+</li>
