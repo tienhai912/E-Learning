@@ -1,0 +1,4 @@
+<%= form_for [current_user, build_enroll] do |f| %>
+  <%= f.hidden_field :course_id, value: course.id %>
+  <%= f.submit t("start"), class: "btn btn-primary category-submit" %>
+<% end %>

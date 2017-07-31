@@ -1,0 +1,10 @@
+<% if !user_signed_in? %>
+  <% session[:forwarding_url] = request.original_url %>
+  <%= link_to t("start"), new_user_session_path, class: "btn btn-primary" %>
+<% elsif !course.has_enrolled? current_user %>
+  <%= render "courses/start_course", course: course, build_enroll: build_enroll %>
+<% elsif course.has_finished? current_user %>
+  <%= link_to t("review"), course, class: "btn btn-primary" %>
+<% else %>
+  <%= link_to t("continue"), course, class: "btn btn-primary" %>
+<% end %>

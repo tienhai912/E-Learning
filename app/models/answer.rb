@@ -7,4 +7,6 @@ class Answer < ApplicationRecord
   validates :content, presence: true,
     length: {maximum: Settings.answer.content_max}
   validates :is_correct, inclusion: {in: [true, false]}
+
+  scope :correct, ->{where is_correct: true}
 end

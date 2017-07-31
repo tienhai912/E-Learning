@@ -39,13 +39,6 @@ RSpec.describe Enroll, type: :model do
     expect(enroll).to_not be_valid
   end
 
-  it "is not valid with a non-integer status" do
-    enroll.status = 1.2
-    expect(enroll).to_not be_valid
-    enroll.status = "a"
-    expect(enroll).to_not be_valid
-  end
-
   it "is not valid without date_start" do
     enroll.date_start = nil
     expect(enroll).to_not be_valid

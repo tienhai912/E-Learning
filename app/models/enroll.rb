@@ -4,10 +4,12 @@ class Enroll < ApplicationRecord
 
   validates :user_id, presence: true, numericality: {only_integer: true}
   validates :course_id, presence: true, numericality: {only_integer: true}
-  validates :status, presence: true, numericality: {only_integer: true}
+  validates :status, presence: true
   validates :date_start, presence: true
   validates :date_finish, presence: true, allow_nil: true
   validate :finish_after_start
+
+  enum status: %i(not_finish finished)
 
   private
 

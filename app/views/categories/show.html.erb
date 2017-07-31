@@ -4,9 +4,9 @@
 <div class="course-list">
   <% @courses.each_with_index do |course, index| %>
     <% if index.even? %>
-      <%= render "courses/course_item1", course: course %>
+      <%= render "courses/course_item1", course: course, build_enroll: @build_enroll %>
     <% else %>
-      <%= render "courses/course_item2", course: course %>
+      <%= render "courses/course_item2", course: course, build_enroll: @build_enroll %>
     <% end %>
   <% end %>
 </div>
