@@ -1,6 +1,14 @@
 IrresponsibleModule:
   enabled: false
 
+FeatureEnvy:
+  exclude:
+    - "UsersHelper#gravatar_for"
+
+InstanceVariableAssumption:
+  exclude:
+  - "UsersController"
+
 exclude_paths:
-  - 'vendor'
-  - 'db/migrate'
+  - "vendor"
+  - "db/migrate"

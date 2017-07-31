@@ -63,3 +63,10 @@ end
   content = Faker::Lorem.sentence 5
   words2.each {|word| word.answers.create! content: content, word_id: word.id, is_correct: false}
 end
+
+users = User.all
+user  = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each {|followed| user.follow(followed)}
+followers.each {|follower| follower.follow(user)}
