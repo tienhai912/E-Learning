@@ -1,7 +1,9 @@
 <% provide :title, @lesson.name %>
 
-<span class="lesson-name"><%= link_to @lesson.name,
-  course_lesson_path(@lesson.course_id, @lesson.id) %></span>
+<h2 class="lesson-name">
+  <%= t "words_in" %>
+  <%= link_to @lesson.name, course_lesson_path(@lesson.course_id, @lesson.id)%>
+</h2>
 <ul class="words">
   <%= render @words %>
 </ul>

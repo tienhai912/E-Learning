@@ -12,6 +12,7 @@ $fa-youtube: #b00;
 $red: #f00;
 $input-form: #bbb;
 $grey: #666560;
+$blue: #00f;
 
 html,
 body {
@@ -58,6 +59,7 @@ footer {
   margin-top: 20px;
   padding-bottom: 20px;
   padding-top: 20px;
+  width: 100%;
 
   .follow-me {
     padding-left: 100px;
@@ -184,4 +186,76 @@ input {
 
 .category-submit {
   width: auto;
+}
+
+.users {
+  list-style: none;
+  margin: 0;
+
+  li {
+    border-bottom: 1px solid $gray-lighter;
+    overflow: auto;
+    padding: 10px 0;
+  }
+
+  .follow {
+    padding: 0;
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar-edit {
+  margin-top: 15px;
+}
+
+.stats {
+  margin-top: 0;
+  overflow: auto;
+  padding: 0;
+
+  a {
+    border-left: 1px solid $gray-lighter;
+    color: $grey;
+    float: left;
+    padding: 0 10px;
+
+    &:first-child {
+      border: 0;
+      padding-left: 0;
+    }
+
+    &:hover {
+      color: $blue;
+      text-decoration: none;
+    }
+  }
+
+  strong {
+    display: block;
+  }
+}
+
+.user-avatars {
+  margin-top: 10px;
+  overflow: auto;
+
+  .gravatar {
+    margin: 1px;
+  }
+
+  a {
+    padding: 0;
+  }
+}
+
+.home-button {
+  font-size: 35px;
+  height: 80px;
+  padding-top: 15px;
+  text-align: center;
+  width: 300px;
 }
