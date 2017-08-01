@@ -1,0 +1,6 @@
+<% provide :title, t("sign_up") %>
+<% provide :button_text, t("save_changes") %>
+
+<h2><%= t "edit_course" %></h2>
+
+<%= render "courses/course_form", course: @course, category_id: @course.category_id %>

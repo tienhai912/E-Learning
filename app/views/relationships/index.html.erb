@@ -8,6 +8,12 @@
       </section>
     </div>
     <div class="row">
+        <section class="stats">
+          <%= render "shared/stats", user: @user,
+            destroy: @relationship_destroy, build: @relationship_build %>
+        </section>
+      </div>
+    <div class="row">
       <section class="stats">
         <% if @users.any? %>
           <div class="user-avatars">

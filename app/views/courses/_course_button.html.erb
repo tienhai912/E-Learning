@@ -8,3 +8,11 @@
 <% else %>
   <%= link_to t("continue"), course, class: "btn btn-primary" %>
 <% end %>
+<% if user_signed_in? && current_user.is_admin %>
+  <span class="course-button">
+    <%= link_to t("edit"), edit_course_path(course), class: "btn btn-primary" %>
+    <%= link_to t("delete"), course, method: :delete,
+      data:{confirm: t("delete_course", course: course.name)},
+      class: "btn btn-primary" %>
+  </span>
+<% end %>

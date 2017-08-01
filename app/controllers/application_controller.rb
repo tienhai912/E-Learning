@@ -14,6 +14,14 @@ class ApplicationController < ActionController::Base
     session[:forwarding_url] = request.original_url if request.get?
   end
 
+  def logged_in_admin
+    logged_in_user
+
+    return if current_user.is_admin
+    flash[:danger] = t "no_permission"
+    redirect_to root_path
+  end
+
   def logged_in_user
     return if user_signed_in?
     store_location

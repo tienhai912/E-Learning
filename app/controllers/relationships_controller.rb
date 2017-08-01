@@ -6,11 +6,14 @@ class RelationshipsController < ApplicationController
 
   def index
     @users = user.send(params[:type]).paginate page: params[:page]
+    active_relationships = current_user.active_relationships
+    @relationship_build = active_relationships.build
+    @relationship_destroy = active_relationships.find_by following_id: user.id
   end
 
   def create
     @relationship_destroy =
-      current_user.active_relationships.find_by following_id: @user.id
+      current_user.active_relationships.find_by following_id: user.id
     respond_to do |format|
       format.html{redirect_to user}
       format.js
@@ -20,7 +23,7 @@ class RelationshipsController < ApplicationController
   def destroy
     @relationship_build = current_user.active_relationships.build
     respond_to do |format|
-      format.html{redirect_to @user}
+      format.html{redirect_to user}
       format.js
     end
   end

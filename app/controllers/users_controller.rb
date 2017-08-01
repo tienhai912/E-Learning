@@ -6,9 +6,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @relationship_build = current_user.active_relationships.build
-    @relationship_destroy = 
-      current_user.active_relationships.find_by following_id: @user.id
+    active_relationships = current_user.active_relationships
+    @relationship_build = active_relationships.build
+    @relationship_destroy = active_relationships.find_by following_id: user.id
   end
 
   private
