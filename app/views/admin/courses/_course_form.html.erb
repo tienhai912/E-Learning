@@ -1,7 +1,7 @@
 <%= form_for [:admin, course] do |f| %>
   <%= render "shared/error_messages",  object: f.object %>
 
-  <%= f.hidden_field :category_id, value: category_id %>
+  <%= hidden_field_tag :category_id, course.category_id %>
 
   <div class="field">
     <%= f.label :name %><br />

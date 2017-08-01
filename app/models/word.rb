@@ -6,6 +6,8 @@ class Word < ApplicationRecord
 
   validates :content, presence: true,
     length: {maximum: Settings.word.content_max}
-  validates :kind, presence: true, numericality: {only_integer: true}
+  validates :kind, presence: true
   validates :lesson_id, presence: true, numericality: {only_integer: true}
+
+  enum kind: %i(single_choice multiple_choice)
 end

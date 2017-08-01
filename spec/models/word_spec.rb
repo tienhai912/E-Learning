@@ -15,13 +15,6 @@ RSpec.describe Word, type: :model do
     expect(word).to_not be_valid
   end
 
-  it "is not valid with a non-integer kind" do
-    word.kind = 1.2
-    expect(word).to_not be_valid
-    word.kind = "a"
-    expect(word).to_not be_valid
-  end
-
   it "is not valid without lesson_id" do
     word.lesson_id = nil
     expect(word).to_not be_valid

@@ -4,4 +4,4 @@
 <h2><%= t "new_course" %></h2>
 
 <%= render "admin/courses/course_form", course: @course,
-  category_id: params[:category_id] %>
+  category_id: @category.id %>

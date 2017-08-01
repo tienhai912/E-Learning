@@ -1,16 +1,17 @@
 module Admin
   class CoursesController < ApplicationController
-    attr_reader :course
+    attr_reader :course, :category
 
     before_action :logged_in_admin
     before_action :find_course, except: %i(index new create)
+    before_action :find_category, only: %i(new create)
 
     def new
-      @course = Course.new
+      @course = category.courses.build
     end
 
     def create
-      @course = Course.new course_params
+      @course = category.courses.build course_params
       if course.save
         flash[:success] = t "course_created"
         redirect_to admin_course_path(course)
@@ -44,7 +45,7 @@ module Admin
     private
 
     def course_params
-      params.require(:course).permit :category_id, :name, :description
+      params.require(:course).permit :name, :description
     end
 
     def find_course
@@ -52,6 +53,14 @@ module Admin
 
       return if course
       flash[:danger] = t "course_not_found"
+      redirect_to root_path
+    end
+
+    def find_category
+      @category = Category.find_by id: params[:category_id]
+
+      return if category
+      flash[:danger] = t "category_not_found"
       redirect_to root_path
     end
   end

@@ -1,0 +1,7 @@
+<% provide :title, t("edit_lesson") %>
+<% provide :button_text, t("save_changes") %>
+
+<h2><%= t "edit_lesson" %></h2>
+
+<%= render "admin/lessons/lesson_form", lesson: @lesson,
+  course_id: @lesson.course_id %>

@@ -5,11 +5,11 @@
 <span class="category-description">
   <%= category.description %>
 </span>
-<span class="category-button">
+<div class="category-button">
   <%= link_to t("edit"), edit_admin_category_path(category),
     class: "btn btn-primary" %>
   <%= link_to t("delete"), admin_category_path(category), method: :delete,
     data:{confirm: t("delete_category", category: category.name)},
     class: "btn btn-danger" %>
-</span>
+</div>
 </li>

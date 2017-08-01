@@ -1,0 +1,7 @@
+<% provide :title, t("new_answer") %>
+<% provide :button_text, t("create") %>
+
+<h2><%= t "new_answer" %></h2>
+
+  <%= render "admin/answers/answer_form", answer: @answer,
+    word_id: @word.id %>

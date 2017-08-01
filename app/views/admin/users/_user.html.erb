@@ -1,0 +1,15 @@
+<li>
+<div class="user-name">
+  <%= t "name" %>
+  <%= link_to user.name, user %>
+</div>
+<div class="user-email">
+  <%= t "email" %>
+  <%= user.email %>
+</div>
+<div class="user-button">
+  <%= link_to t("delete"), admin_user_path(user), method: :delete,
+    data:{confirm: t("delete_user", user: user.name)},
+    class: "btn btn-danger" %>
+</div>
+</li>
