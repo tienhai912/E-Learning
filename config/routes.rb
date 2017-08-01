@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "pages/*page", to: "pages#show", as: :pages
   root "pages#show", page: "home"
 
-  resources :courses, only: :show do
+  resources :courses do
     resources :lessons, only: :show
   end
 

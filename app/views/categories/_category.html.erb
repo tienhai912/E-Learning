@@ -3,4 +3,12 @@
   <span class="category-description">
     <%= category.description %>
   </span>
+  <% if user_signed_in? && current_user.is_admin %>
+    <span class="category-button">
+      <%= link_to t("edit"), edit_category_path(category), class: "btn btn-primary" %>
+      <%= link_to t("delete"), category, method: :delete,
+        data: {confirm: t("delete_category", category: category.name)},
+        class: "btn btn-primary" %>
+    </span>
+  <% end %>
 </li>

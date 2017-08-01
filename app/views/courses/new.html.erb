@@ -1,0 +1,6 @@
+<% provide :title, t("new_course") %>
+<% provide :button_text, t("create") %>
+
+<h2><%= t "new_course" %></h2>
+
+<%= render "courses/course_form", course: @course, category_id: params[:category_id] %>
