@@ -33,7 +33,9 @@ RemoveUnusedMethodsInControllersCheck: { except_methods: [],
     "app/controllers/application_controller.rb",
     "app/controllers/enrolls_controller.rb",
     "app/controllers/results_controller.rb",
-    "app/controllers/tests_controller.rb"
+    "app/controllers/tests_controller.rb",
+    "app/controllers/admin/categories_controller.rb",
+    "app/controllers/admin/courses_controller.rb"
   ]
 }
 RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }

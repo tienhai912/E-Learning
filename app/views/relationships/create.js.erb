@@ -1,2 +1,2 @@
-$('#follow_form').html('<%= j render "users/unfollow", destroy: @relationship_destroy %>');
+$('#follow_form').html('<%= j render "users/unfollow", destroy: @supports.relationship_destroy %>');
 $('#followers').html('<%= @user.followers.count %>');

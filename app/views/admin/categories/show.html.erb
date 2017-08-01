@@ -1,0 +1,18 @@
+<% provide :title, @category.name %>
+
+<h1 class="category-name">
+  <%= t "courses_in" %>
+  <%= link_to @category.name, admin_category_path(@category)%>
+</h1>
+<%= link_to t("new_course"), new_admin_course_path(category_id: @category.id),
+  class: "btn btn-primary" %>
+<div class="course-list">
+  <% @courses.each_with_index do |course, index| %>
+    <% if index.even? %>
+      <%= render "admin/courses/course_item1", course: course %>
+    <% else %>
+      <%= render "admin/courses/course_item2", course: course %>
+    <% end %>
+  <% end %>
+</div>
+<%= will_paginate @courses %>
