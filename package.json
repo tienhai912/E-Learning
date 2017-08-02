@@ -1,5 +1,9 @@
 {
   "name": "e_learning",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@material/checkbox": "^0.4.1",
+    "@material/radio": "^0.2.8",
+    "@material/select": "^0.3.11"
+  }
 }

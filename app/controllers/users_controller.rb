@@ -1,15 +1,16 @@
 class UsersController < ApplicationController
-  before_action :find_user, except: :index
+  before_action :find_user, only: :show
+
+  attr_reader :user
 
   def index
     @users = User.paginate page: params[:page]
   end
 
   def show
-    active_relationships = current_user.active_relationships
-    @relationship_build = active_relationships.build
-    @relationship_destroy = active_relationships.find_by following_id: user.id
-    @tests = @user.tests.paginate page: params[:page]
+    @tests = user.tests.paginate page: params[:page]
+    @supports = Supports::UserSupports.new user: user,
+      current_user: current_user
   end
 
   private
@@ -18,7 +19,6 @@ class UsersController < ApplicationController
     @user = User.find_by id: params[:id]
 
     return if user
-
     flash[:danger] = t "user_not_found_by_id"
     redirect_to root_path
   end

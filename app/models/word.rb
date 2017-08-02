@@ -3,6 +3,7 @@ class Word < ApplicationRecord
 
   has_many :answers, dependent: :destroy
   has_many :results, dependent: :destroy
+  has_many :learns, dependent: :destroy
 
   validates :content, presence: true,
     length: {maximum: Settings.word.content_max}
@@ -10,4 +11,12 @@ class Word < ApplicationRecord
   validates :lesson_id, presence: true, numericality: {only_integer: true}
 
   enum kind: %i(single_choice multiple_choice)
+
+  scope :learned, (lambda do |user_id|
+    joins(:learns).where learns: {user_id: user_id, has_learned: true}
+  end)
+
+  scope :not_learned, (lambda do |user_id|
+    joins(:learns).where learns: {user_id: user_id, has_learned: false}
+  end)
 end

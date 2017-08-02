@@ -1,0 +1,19 @@
+<% provide :title, t("my_lessons") %>
+
+<h2>
+  <%= t "my_lessons" %>
+</h2>
+<% @courses.each do |course| %>
+  <% @user_lessons = course.lessons.learned_lesson(@user.id) %>
+  <% if @user_lessons.present? %>
+    <h3 class="course-lesson-name">
+      <%= t "course" %>
+      <%= link_to course.name, course %>
+    </h3>
+    <% @user_lessons.each do |lesson| %>
+      <div class="lesson-name"><%= link_to lesson.name,
+        "#" %></div>
+    <% end %>
+  <% end %>
+<% end %>
+<%= will_paginate %>
