@@ -2,25 +2,20 @@
 
 <div class="test-lesson">
   <h3><%= @supports.test.lesson.name %>
-    <%= @supports.word_numerical + 1 %> / <%= @supports.words.size %>
+    <b><%= @supports.word_numerical + 1 %> / <%= @supports.words.size %></b>
   </h3>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 col-md-offset-1">
       <h1 class="word-test"><b><%= @supports.word.content %></b></h1>
       <%= link_to t("speak"), "#", class: "btn btn-primary" %>
     </div>
-    <ul class="col-md-5 col-md-offset-1">
-      <% @supports.word.answers.each do |answer| %>
-        <li>
-          <%= form_for @supports.new_result do |f| %>
-            <%= hidden_field_tag :word_numerical, params[:word_numerical] %>
-            <%= f.hidden_field :test_id, value: @supports.test.id %>
-            <%= f.hidden_field :word_id, value: @supports.word.id %>
-            <%= f.hidden_field :answer_id, value: answer.id %>
-
-            <%= f.submit answer.content, class: "btn btn-primary answer" %>
-          <% end %>
-        </li>
+    <ul class="col-md-4 col-md-offset-1 answer">
+      <% if @supports.word.single_choice? %>
+        <%= render "single_answer",
+          supports: @supports, new_result: @new_result %>
+      <% else %>
+        <%= render "multiple_answer",
+          supports: @supports, new_result: @new_result %>
       <% end %>
     </ul>
   </div>
@@ -30,7 +25,7 @@
         word_numerical: @supports.word_numerical + 1),
         class: "btn btn-primary" %>
     <% elsif @supports.check_answer == 2 %>
-      <%= link_to t("done"), @test, class: "btn btn-primary" %>
+      <%= link_to t("done"), @supports.test, class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
