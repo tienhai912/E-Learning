@@ -6,5 +6,4 @@ class Test < ApplicationRecord
 
   validates :user_id, presence: true, numericality: {only_integer: true}
   validates :lesson_id, presence: true, numericality: {only_integer: true}
-  validates :created_at, presence: true
 end

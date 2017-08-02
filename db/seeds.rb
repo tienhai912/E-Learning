@@ -32,18 +32,13 @@ end
   Lesson.create! name: lesson_name, course_id: 1
 end
 
-lessons = Lesson.order(:created_at).take 6
-20.times do
+lessons = Lesson.order(:created_at).take 1
+5.times do
   content = Faker::Lorem.sentence 5
   lessons.each {|lesson| lesson.words.create! content: content, kind: 1}
 end
 
-20.times do
-  content = Faker::Lorem.sentence 5
-  lessons.each {|lesson| lesson.words.create! content: content, kind: 2}
-end
-
-words = Word.order(:created_at).take 6
+words = Word.order(:created_at).take 20
 1.times do
   content = Faker::Lorem.sentence 5
   words.each {|word| word.answers.create! content: content, word_id: word.id, is_correct: true}
@@ -53,16 +48,16 @@ end
   words.each {|word| word.answers.create! content: content, word_id: word.id, is_correct: false}
 end
 
-words_with_two_answers = [120,121,122,123,124]
-words2 = Word.where("id IN (?)", words_with_two_answers)
-2.times do
-  content = Faker::Lorem.sentence 5
-  words2.each {|word| word.answers.create! content: content, word_id: word.id, is_correct: true}
-end
-2.times do
-  content = Faker::Lorem.sentence 5
-  words2.each {|word| word.answers.create! content: content, word_id: word.id, is_correct: false}
-end
+# words_with_two_answers = [120,121,122,123,124]
+# words2 = Word.where("id IN (?)", words_with_two_answers)
+# 2.times do
+#   content = Faker::Lorem.sentence 5
+#   words2.each {|word| word.answers.create! content: content, word_id: word.id, is_correct: true}
+# end
+# 2.times do
+#   content = Faker::Lorem.sentence 5
+#   words2.each {|word| word.answers.create! content: content, word_id: word.id, is_correct: false}
+# end
 
 users = User.all
 user  = users.first

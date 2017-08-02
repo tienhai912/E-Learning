@@ -1,0 +1,23 @@
+<%= provide :title, t("result") %>
+
+<div class="result-test">
+  <p class="name-test"><b><%= @lesson_name %> <%= t "result" %></b>
+    <span><%= @count_answer_true%> / <%= @results_count %></span>
+  </p>
+  <ul>
+    <% @results.each do |result| %>
+      <% word = result.word %>
+      <% answer = result.answer %>
+      <li class="row ">
+        <% if answer.is_correct %>
+          <p class="col-md-1">O</p>
+        <% else %>
+          <p class="col-md-1">X</p>
+        <% end %>
+        <p class="col-md-3"><%= answer.content %></p>
+        <p class="col-md-3"><%= word.content %></p>
+        <%= link_to t("speak"), "#", class: "btn btn-primary col-md-2 speak-result" %>
+      </li>
+    <% end %>
+  </ul>
+</div>

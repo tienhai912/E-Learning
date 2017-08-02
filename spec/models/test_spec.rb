@@ -34,9 +34,4 @@ RSpec.describe Test, type: :model do
     test.lesson_id = "a"
     expect(test).to_not be_valid
   end
-
-  it "is not valid without created_at" do
-    test.created_at = nil
-    expect(test).to_not be_valid
-  end
 end
