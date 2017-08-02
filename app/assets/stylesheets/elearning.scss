@@ -56,6 +56,14 @@ body {
   }
 }
 
+input {
+  border: 1px solid $input-form;
+  box-sizing: border-box;
+  height: auto;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
 footer {
   background-color: $footer;
   margin-top: 20px;
@@ -288,7 +296,7 @@ footer {
     margin-top: 0;
     text-align: center;
   }
-}    
+}
 
 .test {
   list-style: none;
@@ -310,4 +318,23 @@ footer {
     margin-right: 10px;
     margin-top: 5px;
   }
+}
+
+.words-list {
+  column-count: 2;
+  column-width: 50px;
+  padding-top: 40px;
+
+}
+
+.my-select-container {
+  .mdc-select {
+    height: 550px;
+    width: 300px;
+  }
+}
+
+.radio-inline {
+  input {
+    width: auto;  }
 }
