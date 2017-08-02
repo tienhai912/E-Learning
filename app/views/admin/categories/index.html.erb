@@ -1,0 +1,8 @@
+<% provide :title, t("categories") %>
+
+<h1><%= t "categories_list" %></h1>
+<%= link_to t("new_category"), new_admin_category_path, class: "btn btn-primary" %>
+<ul class="categories">
+  <%= render @categories %>
+</ul>
+<%= will_paginate @categories %>

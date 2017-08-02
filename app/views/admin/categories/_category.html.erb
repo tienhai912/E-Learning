@@ -1,0 +1,15 @@
+<li>
+<span class="category-name">
+  <%= link_to category.name, admin_category_path(category) %>
+</span>
+<span class="category-description">
+  <%= category.description %>
+</span>
+<span class="category-button">
+  <%= link_to t("edit"), edit_admin_category_path(category),
+    class: "btn btn-primary" %>
+  <%= link_to t("delete"), admin_category_path(category), method: :delete,
+    data:{confirm: t("delete_category", category: category.name)},
+    class: "btn btn-danger" %>
+</span>
+</li>

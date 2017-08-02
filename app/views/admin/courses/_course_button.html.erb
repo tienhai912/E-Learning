@@ -1,0 +1,7 @@
+<span class="course-button">
+  <%= link_to t("edit"), edit_admin_course_path(course),
+    class: "btn btn-primary" %>
+  <%= link_to t("delete"), admin_course_path(course), method: :delete,
+    data:{confirm: t("delete_course", course: course.name)},
+    class: "btn btn-danger" %>
+</span>

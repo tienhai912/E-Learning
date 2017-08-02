@@ -9,6 +9,10 @@
     </div>
     <div class="row">
       <section class="stats">
+        <div>
+          <%= render "shared/stats", user: @user,
+            destroy: @supports.relationship_destroy, build: @supports.relationship_build %>
+        </div>
         <% if @users.any? %>
           <div class="user-avatars">
             <% @users.each do |user| %>

@@ -1,0 +1,9 @@
+<% provide :title, @course.name %>
+
+<h2 class="course-name">
+  <%= t "lessons_of" %>
+  <%= link_to @course.name, admin_course_path(@course) %>
+</h2>
+<ul class="lessons">
+  <%= render @lessons %>
+</ul>
