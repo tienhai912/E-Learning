@@ -1,0 +1,11 @@
+<% provide :title, t("your_lessons") %>
+
+<h2>
+  <%= t "your_lessons" %>
+</h2>
+<%= @lessons.each do |lesson| %>
+  <li>
+    <span class="lesson-name"><%= link_to lesson.name, @user_lesson_path %></span>
+  </li>
+<% end %>
+<%= will_paginate @lessons %>

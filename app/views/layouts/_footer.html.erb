@@ -20,10 +20,10 @@
       <p>© <%= Date.today.year %>.<%= Date.today.month %>.<%= Date.today.day %></p>
     </div>
     <div class="col-md-1 help">
-      <li><%= link_to t("help"), pages_path(page: "help") %></li>
+      <li><%= link_to t("help"), pages_path(page_view: "help") %></li>
     </div>
     <div class="col-md-1 about">
-      <li><%= link_to t("about"), pages_path(page: "about") %></li>
+      <li><%= link_to t("about"), pages_path(page_view: "about") %></li>
     </div>
     <div class="col-md-2 translate">
     </div>

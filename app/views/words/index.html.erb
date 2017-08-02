@@ -1,0 +1,11 @@
+<% provide :title, t("your_words") %>
+
+<h2>
+  <%= t "your_words" %>
+</h2>
+<%= @words.each do |word| %>
+  <li>
+    <span class="word-content"><%= link_to word.content, @user_word %></span>
+  </li>
+<% end %>
+<%= will_paginate @words %>
