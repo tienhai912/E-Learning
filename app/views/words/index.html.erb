@@ -1,0 +1,12 @@
+<% provide :title, t("word_list") %>
+
+<h1><%= t "word_list" %></h1>
+
+<div class="row">
+  <div class="words-list">
+    <ul class="words">
+      <%= render @words %>
+    </ul>
+  </div>
+  <%= will_paginate @words %>
+</div>

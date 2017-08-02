@@ -16,10 +16,12 @@
       </div>
     </aside>
       <div class="col-md-3">
-        <%= link_to t("word_list"), "#", class: "btn btn-primary home-button" %>
+        <%= link_to t("my_words"), wordlist_filters_path(current_user),
+          class: "btn btn-primary home-button" %>
       </div>
       <div class="col-md-3 col-md-offset-1">
-        <%= link_to t("my_courses"), "#", class: "btn btn-primary home-button" %>
+        <%= link_to t("my_lessons"), user_lessons_path(current_user),
+          class: "btn btn-primary home-button" %>
       </div>
     </div>
 <% else %>

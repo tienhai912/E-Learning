@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726030432) do
+ActiveRecord::Schema.define(version: 20170731103517) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "word_id"
@@ -41,6 +41,14 @@ ActiveRecord::Schema.define(version: 20170726030432) do
     t.integer "status"
     t.datetime "date_start"
     t.datetime "date_finish"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "learns", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "word_id"
+    t.boolean "has_learned"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

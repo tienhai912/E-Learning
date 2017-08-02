@@ -288,3 +288,22 @@ footer {
     text-align: center;
   }
 }
+
+.words-list {
+  column-count: 2;
+  column-width: 50px;
+  padding-top: 40px;
+
+}
+
+.my-select-container {
+  .mdc-select {
+    height: 550px;
+    width: 300px;
+  }
+}
+
+.radio-inline {
+  input {
+    width: auto;  }
+}
