@@ -1,0 +1,12 @@
+<li>
+  <% supports.word.answers.each do |answer| %>
+    <%= form_for new_result do |f| %>
+      <%= hidden_field_tag :word_numerical, params[:word_numerical] %>
+      <%= f.hidden_field :test_id, value: supports.test.id %>
+      <%= f.hidden_field :word_id, value: supports.word.id %>
+      <%= f.hidden_field :answer_id, value: answer.id %>
+
+      <%= f.submit answer.content, class: "btn btn-primary single-answer" %>
+    <% end %>
+  <% end %>
+</li>

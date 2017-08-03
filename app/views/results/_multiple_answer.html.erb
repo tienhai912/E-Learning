@@ -1,0 +1,12 @@
+ <%= form_for new_result do |f| %>
+  <%= hidden_field_tag :word_numerical, params[:word_numerical] %>
+  <%= f.hidden_field :test_id, value: supports.test.id %>
+  <%= f.hidden_field :word_id, value: supports.word.id %>
+  <% supports.word.answers.each do |answer| %>
+    <label>
+      <%= f.check_box :answer_id, {multiple: true}, answer.id, nil %>
+      <%= answer.content %>
+    </label>
+  <% end %>
+  <%= f.submit t("submit_answer"), class: "btn btn-primary answer" %>
+<% end %>

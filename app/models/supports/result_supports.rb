@@ -3,7 +3,7 @@ module Supports
     attr_reader :test, :word_numerical, :words, :result
 
     def initialize args = {}
-      @test = args[:test]
+      @test = args[:current_user].tests.find_by id: args[:test_id]
       @word_numerical = args[:word_numerical]
       @words = test.lesson.words
     end
@@ -17,10 +17,6 @@ module Supports
       return 0 unless result
       return 2 if word_numerical + 1 == words.count
       1
-    end
-
-    def new_result
-      Result.new
     end
   end
 end

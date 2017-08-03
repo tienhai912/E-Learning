@@ -145,14 +145,6 @@ footer {
   }
 }
 
-input {
-  border: 1px solid $input-form;
-  box-sizing: border-box;
-  height: auto;
-  margin-bottom: 15px;
-  width: 100%;
-}
-
 .sign-up {
   h1 {
     text-align: center;
@@ -279,4 +271,20 @@ input {
 
 .speak-result {
   width: 70px;
+}
+
+.answer {
+  list-style: none;
+
+  .single-answer {
+    margin-bottom: 10px;
+  }
+}
+
+.test-lesson {
+  h3 {
+    margin-bottom: 50px;
+    margin-top: 0;
+    text-align: center;
+  }
 }

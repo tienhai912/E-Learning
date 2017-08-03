@@ -161,3 +161,5 @@ en:
   single_choice: "Single choice"
   multiple_choice: "Multiple choice"
   kind: "Kind: "
+  save_result_error: "Save result error"
+  submit_answer: "Submit Answer"
