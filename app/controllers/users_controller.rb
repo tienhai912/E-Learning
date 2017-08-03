@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     active_relationships = current_user.active_relationships
     @relationship_build = active_relationships.build
     @relationship_destroy = active_relationships.find_by following_id: user.id
+    @tests = @user.tests.paginate page: params[:page]
   end
 
   private

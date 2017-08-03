@@ -15,13 +15,26 @@
         </section>
       </div>
     </aside>
-      <div class="col-md-3">
-        <%= link_to t("word_list"), "#", class: "btn btn-primary home-button" %>
-      </div>
-      <div class="col-md-3 col-md-offset-1">
-        <%= link_to t("my_courses"), "#", class: "btn btn-primary home-button" %>
-      </div>
+    <div class="col-md-3">
+      <%= link_to t("word_list"), "#", class: "btn btn-primary home-button" %>
     </div>
+    <div class="col-md-3 col-md-offset-1">
+      <%= link_to t("my_courses"), "#", class: "btn btn-primary home-button" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-4">
+      <% if @tests %>
+        <h3>
+          <%= t "activities" %>
+        </h3>
+        <ol class="test">
+          <%= render @tests %>
+        </ol>
+        <%= will_paginate @tests %>
+      <% end %>  
+    </div>
+  </div>
 <% else %>
   <h1><%= t "wellcome" %></h1>
 <% end %>
