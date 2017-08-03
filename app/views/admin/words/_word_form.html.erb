@@ -1,0 +1,27 @@
+<%= form_for [:admin, word] do |f| %>
+  <%= render "shared/error_messages",  object: f.object %>
+
+  <%= hidden_field_tag :lesson_id, word.lesson_id %>
+
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_field :content, autofocus: true, placeholder:
+      t("not_longer_than", length: Settings.word.content_max) %>
+  </div>
+
+  <div>
+    <span class="col-md-1"><strong><%= t "kind" %></strong></span>
+    <label class="radio-inline col-md-3">
+      <%= f.radio_button :kind, :single_choice, checked: word.kind, class: "multiple_classes" %>
+      <%= f.label :kind, t("single_choice"), class: "multiple_classes" %>
+    </label>
+    <label class="radio-inline col-md-3">
+      <%= f.radio_button :kind, :multiple_choice, checked: word.kind, class: "multiple_classes" %>
+      <%= f.label :kind, t("multiple_choice"), class: "multiple_classes" %>
+    </label>
+  </div>
+
+  <div class="actions">
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  </div>
+<% end %>

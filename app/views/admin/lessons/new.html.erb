@@ -1,0 +1,7 @@
+<% provide :title, t("new_lesson") %>
+<% provide :button_text, t("create") %>
+
+<h2><%= t "new_lesson" %></h2>
+
+<%= render "admin/lessons/lesson_form", lesson: @lesson,
+  course_id: @course.id %>

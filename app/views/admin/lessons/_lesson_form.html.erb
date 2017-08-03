@@ -1,0 +1,15 @@
+<%= form_for [:admin, lesson] do |f| %>
+  <%= render "shared/error_messages",  object: f.object %>
+
+  <%= hidden_field_tag :course_id, lesson.course_id %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, placeholder:
+      t("not_longer_than", length: Settings.lesson.name_max) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  </div>
+<% end %>

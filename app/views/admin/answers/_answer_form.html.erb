@@ -1,0 +1,22 @@
+<%= form_for [:admin, answer] do |f| %>
+  <%= render "shared/error_messages",  object: f.object %>
+
+  <%= hidden_field_tag :word_id, answer.word_id %>
+
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_field :content, autofocus: true, placeholder:
+      t("not_longer_than", length: Settings.answer.content_max) %>
+  </div>
+
+  <div class="checkbox">
+    <%= f.label :is_correct, class: "checkbox inline" do %>
+      <%= f.check_box :is_correct, class: "session-remember-me" %>
+      <span><%= t "is_correct" %></span>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+<% provide :title, t("edit_answer") %>
+<% provide :button_text, t("save_changes") %>
+
+<h2><%= t "edit_answer" %></h2>
+
+<%= render "admin/answers/answer_form", answer: @answer,
+  word_id: @answer.word_id, is_correct: @answer.is_correct %>

@@ -1,0 +1,12 @@
+<li>
+<span class="lesson-name">
+  <%= link_to lesson.name, admin_lesson_path(lesson) %>
+</span>
+<div class="lesson-button">
+  <%= link_to t("edit"), edit_admin_lesson_path(lesson),
+    class: "btn btn-primary" %>
+  <%= link_to t("delete"), admin_lesson_path(lesson), method: :delete,
+    data:{confirm: t("delete_lesson", lesson: lesson.name)},
+    class: "btn btn-danger" %>
+</div>
+</li>

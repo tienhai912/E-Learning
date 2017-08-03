@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
 
   def logged_in_admin
     logged_in_user
+    return unless user_signed_in?
 
     return if current_user.is_admin?
     flash[:danger] = t "no_permission"

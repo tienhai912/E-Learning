@@ -4,6 +4,11 @@
   <%= t "lessons_of" %>
   <%= link_to @course.name, admin_course_path(@course) %>
 </h2>
+<%= link_to t("new_lesson"), new_admin_lesson_path(course_id: @course.id),
+  class: "btn btn-primary" %>
 <ul class="lessons">
-  <%= render @lessons %>
+  <% @lessons.each do |lesson| %>
+    <%= render "admin/lessons/lesson", lesson: lesson %>
+  <% end %>
 </ul>
+<%= will_paginate @lessons %>

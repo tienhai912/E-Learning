@@ -1,0 +1,28 @@
+<li>
+  <div class="row">
+    <div class="col-md-6">
+      <span class="word-content">
+        <%= word.content %>
+      </span>
+      <div><%= t "number_of_true_answers", number: word.kind %></div>
+      <div class="word-button">
+        <%= link_to t("edit"), edit_admin_word_path(word),
+          class: "btn btn-primary" %>
+        <%= link_to t("delete"), admin_word_path(word), method: :delete,
+          data:{confirm: t("delete_word", word: word.content)},
+          class: "btn btn-danger" %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <span class="answer-content">
+        <% word.answers.each do |answer| %>
+          <p><%= render "admin/answers/answer", word: word, answer: answer %></p>
+        <% end %>
+        <% if word.answers.length < 4 %>
+          <%= link_to t("new_answer"), new_admin_answer_path(word_id: word.id),
+            class: "btn btn-primary" %>
+        <% end %>
+      </span>
+    </div>
+  </div>
+</li>

@@ -5,6 +5,7 @@ user:
   default_gravatar: 80
   gravatar: 50
   small_gravatar: 30
+  per_page: 10
 
 lesson:
   name_max: 50

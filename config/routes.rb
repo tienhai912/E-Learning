@@ -16,7 +16,12 @@ Rails.application.routes.draw do
   resources :tests, :results
 
   namespace :admin do
+    root "pages#show", page: "home"
+    resources :users, only: %i(index destroy)
     resources :categories
-    resources :courses
+    resources :courses, except: :index
+    resources :lessons, except: :index
+    resources :words, except: %i(index show)
+    resources :answers, except: %i(index show)
   end
 end

@@ -1,0 +1,11 @@
+<span class="answer-content">
+  <%= answer.content %>
+</span>
+<div><%= t "this_answer_is", is_correct: answer.is_correct %></div>
+<div class="answer-button">
+  <%= link_to t("edit"), edit_admin_answer_path(answer), word: word,
+    class: "btn btn-primary" %>
+  <%= link_to t("delete"), admin_answer_path(answer), method: :delete,
+    data:{confirm: t("delete_answer", answer: answer.content)},
+    class: "btn btn-danger" %>
+</div>

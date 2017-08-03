@@ -1,0 +1,7 @@
+<% provide :title, t("edit_word") %>
+<% provide :button_text, t("save_changes") %>
+
+<h2><%= t "edit_word" %></h2>
+
+<%= render "admin/words/word_form", word: @word,
+  lesson_id: @word.lesson_id, kind: @word.kind %>

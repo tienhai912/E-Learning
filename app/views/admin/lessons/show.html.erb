@@ -1,0 +1,14 @@
+<% provide :title, @lesson.name %>
+
+<h2 class="lesson-name">
+  <%= t "words_in" %>
+  <%= link_to @lesson.name, admin_lesson_path(@lesson) %>
+</h2>
+<%= link_to t("new_word"), new_admin_word_path(lesson_id: @lesson.id, kind: 0),
+  class: "btn btn-primary" %>
+<ul class="words">
+  <% @words.each do |word| %>
+    <%= render "admin/words/word", word: word %>
+  <% end %>
+</ul>
+<%= will_paginate @words %>
