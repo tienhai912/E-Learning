@@ -19,6 +19,7 @@
           </li>
         <% end %>
         <% if user_signed_in? %>
+          <li><%= link_to t("all_users"), users_path %></li>
           <li class="dropdown">
             <%= link_to current_user.name, current_user %>
             <ul class="dropdown-menu dropdown-menu-left scroll-menu" roll="menu">

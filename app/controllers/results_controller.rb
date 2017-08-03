@@ -41,9 +41,15 @@ class ResultsController < ApplicationController
   def create_result_single
     result = Result.new result_params_single
     if result.save
+      learn = Learn.find_by user_id: current_user.id, word_id: result.word.id
       if result.answer.is_correct
+        unless learn
+        learn_save = Learn.new(user_id: current_user.id, word_id: result.word.id)
+        learn_save.save
+        end
         flash[:success] = t "true_answer"
       else
+        learn.destroy if learn
         flash[:danger] = t "false_answer"
       end
     else
@@ -81,9 +87,15 @@ class ResultsController < ApplicationController
   end
 
   def show_check_result results
+    learn = Learn.find_by user_id: current_user.id, word_id: result_params_multiple[:word_id]
     if check_result_multiple results
+      unless learn
+        learn_save = Learn.new(user_id: current_user.id, word_id: result_params_multiple[:word_id])
+        learn_save.save
+      end 
       flash[:success] = t "true_answer"
     else
+      learn.destroy if learn
       flash[:danger] = t "false_answer"
     end
   end

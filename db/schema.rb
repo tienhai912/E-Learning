@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726030432) do
+ActiveRecord::Schema.define(version: 20170731103517) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "word_id"
@@ -45,6 +45,14 @@ ActiveRecord::Schema.define(version: 20170726030432) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "learns", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "word_id"
+    t.boolean "has_learned"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "lessons", force: :cascade do |t|
     t.integer "course_id"
     t.string "name"
@@ -57,9 +65,6 @@ ActiveRecord::Schema.define(version: 20170726030432) do
     t.integer "following_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["follower_id", "following_id"], name: "index_relationships_on_follower_id_and_following_id", unique: true
-    t.index ["follower_id"], name: "index_relationships_on_follower_id"
-    t.index ["following_id"], name: "index_relationships_on_following_id"
   end
 
   create_table "results", force: :cascade do |t|
