@@ -1,0 +1,8 @@
+<li class="clearfix">
+  <%= link_to gravatar_for(test.user,
+    size: 50), test.user %>
+  <span class="content">
+    <%= test.user.name %> learned 
+    <%= test.lesson.name %> <%= t("lesson") %> (<%= test.created_at %>)
+  </span>
+</li>

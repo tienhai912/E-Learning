@@ -35,6 +35,11 @@ class User < ApplicationRecord
     following.include? other_user
   end
 
+  def activities
+    self.tests.most_recent
+    Test.available(self).most_recent
+  end
+
   private
 
   def downcase_email

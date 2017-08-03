@@ -1,7 +1,7 @@
 <% provide :title, @user.name %>
 
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-3">
     <div class="row">
       <section class="user_info">
         <%= render "shared/user_info", user: @user %>
@@ -12,4 +12,16 @@
           destroy: @relationship_destroy, build: @relationship_build %>
     </div>
   </aside>
+  <div class="col-md-9">
+    <h3>
+      Activities
+    </h3>
+    <% if @user.tests.any? %>
+      <ol class="test">
+        <%= render @tests %>
+      </ol>
+      <%= will_paginate @tests %>
+    <% end %>
+  </div>
 </div>
+
