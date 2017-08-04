@@ -9,11 +9,17 @@ Rails.application.routes.draw do
 
   resources :users, only: %i(index show) do
     resources :enrolls, only: %i(new create)
+    resources :lessons, only: :index
+    resources :words, only: :index
   end
 
   resources :categories
   resources :relationships, only: %i(index create destroy)
   resources :tests, :results
+
+  namespace :wordlist do
+    resources :filters, only: :index
+  end
 
   namespace :admin do
     root "pages#show", page: "home"

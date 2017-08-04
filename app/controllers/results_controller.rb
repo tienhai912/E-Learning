@@ -8,10 +8,9 @@ class ResultsController < ApplicationController
     @supports = Supports::ResultSupports.new test_id: params[:test_id],
       word_numerical: params[:word_numerical].to_i,
       current_user: current_user
-    unless supports.test
-      flash[:danger] = t "find_test_not_found"
-      redirect_to root_path
-    end
+    return if supports.test
+    flash[:danger] = t "find_test_not_found"
+    redirect_to root_path
   end
 
   def create
@@ -52,10 +51,9 @@ class ResultsController < ApplicationController
   end
 
   def check_create_result result
-    unless result.save
-      flash[:danger] = t "save_result_error"
-      redirect_to root_path
-    end
+    return if result.save
+    flash[:danger] = t "save_result_error"
+    redirect_to root_path
   end
 
   def check_result_multiple results
@@ -64,7 +62,7 @@ class ResultsController < ApplicationController
     results.each do |result|
       return false unless result.answer.is_correct
     end
-    return true
+    true
   end
 
   def reload_page
