@@ -5,6 +5,7 @@ class Course < ApplicationRecord
 
   has_many :lessons, dependent: :destroy
   has_many :enrolls, dependent: :destroy
+  has_many :tests, through: :lessons, foreign_key: :lesson_id
 
   validates :category_id, presence: true, numericality: {only_integer: true}
   validates :name, presence: true,

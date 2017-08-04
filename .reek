@@ -4,6 +4,7 @@ IrresponsibleModule:
 FeatureEnvy:
   exclude:
     - "UsersHelper#gravatar_for"
+    - "ResultsController#check_result_multiple"
 
 InstanceVariableAssumption:
   exclude:

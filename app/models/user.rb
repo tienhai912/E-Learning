@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :enrollments, class_name: Enroll.name, dependent: :destroy
   has_many :tests, dependent: :destroy
+  has_many :lessons, ->{distinct}, through: :tests, foreign_key: :lesson_id
+  has_many :learns, dependent: :destroy
 
   validates :name, presence: true,
     length: {maximum: Settings.user.name_max}
@@ -36,7 +38,7 @@ class User < ApplicationRecord
   end
 
   def activities
-    self.tests.most_recent
+    tests.most_recent
     Test.available(self).most_recent
   end
 

@@ -1,5 +1,5 @@
 class ResultsController < ApplicationController
-  attr_reader :supports
+  attr_reader :supports, :results
 
   before_action :authenticate_user!
 
@@ -8,10 +8,9 @@ class ResultsController < ApplicationController
     @supports = Supports::ResultSupports.new test_id: params[:test_id],
       word_numerical: params[:word_numerical].to_i,
       current_user: current_user
-    unless supports.test
-      flash[:danger] = t "find_test_not_found"
-      redirect_to root_path
-    end
+    return if supports.test
+    flash[:danger] = t "find_test_not_found"
+    redirect_to root_path
   end
 
   def create
@@ -19,6 +18,7 @@ class ResultsController < ApplicationController
     if word.single_choice?
       create_result_single
     else
+      @results = []
       create_result_multiple
     end
     reload_page
@@ -27,7 +27,6 @@ class ResultsController < ApplicationController
   private
 
   def create_result_multiple
-    results = []
     result_params_multiple[:answer_id].each do |answer_id|
       result = Result.new test_id: result_params_multiple[:test_id],
         word_id: result_params_multiple[:word_id],
@@ -52,10 +51,9 @@ class ResultsController < ApplicationController
   end
 
   def check_create_result result
-    unless result.save
-      flash[:danger] = t "save_result_error"
-      redirect_to root_path
-    end
+    return if result.save
+    flash[:danger] = t "save_result_error"
+    redirect_to root_path
   end
 
   def check_result_multiple results
@@ -64,7 +62,7 @@ class ResultsController < ApplicationController
     results.each do |result|
       return false unless result.answer.is_correct
     end
-    return true
+    true
   end
 
   def reload_page
